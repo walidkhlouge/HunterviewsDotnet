@@ -1,0 +1,65 @@
+﻿@model Formation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>Add New Formation</title>
+<body>
+    <h1>Add New Customer</h1>
+
+
+    <br />
+
+    <form asp-action="Update" asp-controller="Formation">
+        <table>
+            <tr>
+                <td>
+                    <label asp-for="ecole">
+                        Ecole :
+                    </label>
+                </td>
+                <td>
+                    <input type="text" asp-for="ecole" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="dateStart">
+                        Date Start :
+                    </label>
+                </td>
+                <td>
+                    <input type="date" asp-for="dateStart" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="dateEnd">
+                        Date End :
+                    </label>
+                </td>
+                <td>
+                    <input type="date" asp-for="dateEnd" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="user">
+                        userid :
+                    </label>
+                </td>
+                <td>
+                    <input type="text" asp-for="user" />
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Save" /></td>
+                <td><a asp-action="Index" asp-controller="Formation">Back</a></td>
+            </tr>
+        </table>
+        <br />
+        <div asp-validation-summary="All"></div>
+    </form>

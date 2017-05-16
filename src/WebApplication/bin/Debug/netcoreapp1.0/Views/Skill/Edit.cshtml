@@ -1,0 +1,50 @@
+@model WebApplication.Models.Skill
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Edit Skill</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="form-group">
+            <label asp-for="category" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+
+                <select asp-for="category" class="form-control">
+                    <option value="0">Desktop</option>
+                    <option value="1">Web</option>
+                    <option value="2">Mobile</option>
+                </select>
+                <span asp-validation-for="category" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="userid" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="userid" class="form-control" />
+                <span asp-validation-for="userid" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

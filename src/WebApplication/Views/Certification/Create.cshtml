@@ -1,0 +1,74 @@
+@model WebApplication.Models.Certification
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Add Certification</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="id" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="centre" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+
+                <select asp-for="centre" class="form-control">
+                    <option value="0">Tunis</option>
+                    <option value="1">Sfax</option>
+                    <option value="2">Sousse</option>
+                </select>
+                <span asp-validation-for="centre" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="dateStart" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="dateStart" class="form-control" />
+                <span asp-validation-for="dateStart" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="dateEnd" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="dateEnd" class="form-control" />
+                <span asp-validation-for="dateEnd" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="user" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="user" class="form-control" />
+                <span asp-validation-for="user" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+

@@ -1,0 +1,50 @@
+@model WebApplication.Models.Newsmail
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Newsmail</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+        <div class="form-group">
+            <label asp-for="from" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="from" class="form-control" />
+                <span asp-validation-for="from" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="to" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="to" class="form-control" />
+                <span asp-validation-for="to" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="messag" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="messag" class="form-control" />
+                <span asp-validation-for="messag" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="subject" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="subject" class="form-control" />
+                <span asp-validation-for="subject" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            
+        </div>
+    </div>
+</form>
+
+
+

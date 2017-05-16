@@ -1,0 +1,80 @@
+@model WebApplication.Models.Offer
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h4>Offer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.typeOffer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.typeOffer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateStart)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateStart)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.seen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.seen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+    </dl>
+</div>
+@Html.HiddenFor(model => model.id)
+
+
+<div>
+    @Html.ActionLink("Details", "Details", new { id = Model.id }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

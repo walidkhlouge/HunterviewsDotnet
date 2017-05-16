@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 4096M
+  instances: 1
+  domain: mybluemix.net
+  name: piHunterViewsDotNet
+  host: piHunterViewsDotNet
+  disk_quota: 2048M
+  env:
+    CACHE_NUGET_PACKAGES: false

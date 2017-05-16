@@ -1,0 +1,37 @@
+@model WebApplication.Models.Skill
+@{
+    ViewBag.Title = "Category of Skills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>Skill</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.user)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.userid)
+        </dd>
+    </dl>
+</div>
+

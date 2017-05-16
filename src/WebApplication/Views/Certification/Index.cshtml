@@ -1,0 +1,67 @@
+@model IEnumerable<WebApplication.Models.Certification>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    <a asp-action="Create">Certification</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Recherche par Certification: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSortParm">@Html.DisplayNameFor(model => model.title)</a>
+</th>
+            <th>
+                @Html.DisplayNameFor(model => model.centre)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSortParm">@Html.DisplayNameFor(model => model.dateStart)</a>
+</th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateEnd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.centre) >>@Html.ActionLink("Map", "Map", new { id = item.centre })<<
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateEnd)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

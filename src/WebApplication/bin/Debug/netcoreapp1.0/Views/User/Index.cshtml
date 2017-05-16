@@ -1,0 +1,82 @@
+@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a asp-action="Insert">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Recherche par login: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Annuler</a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSortParm">@Html.DisplayNameFor(model => model.login)</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewBag.DateSortParm">@Html.DisplayNameFor(model => model.birthDate)</a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dateCreationAccount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.stateAccount)
+                </th>
+              
+
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.login)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.birthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dateCreationAccount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.stateAccount)
+                    </td>
+
+
+
+
+                    <td>
+                        @Html.ActionLink("Update", "Update", new { id = item.id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Block", "Block", new { id = item.id }) |
+                        
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

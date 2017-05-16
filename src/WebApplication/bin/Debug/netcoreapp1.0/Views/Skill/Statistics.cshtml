@@ -1,0 +1,72 @@
+﻿
+
+@{
+    ViewBag.Title = "Category of Skills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Go Back", "Index")
+<script type="text/javascript">
+
+
+
+
+
+    var x = @ViewBag.res;
+
+    var y = @ViewBag.res1;
+
+    var z = @ViewBag.res2;
+
+
+
+</script>
+<center>
+    <br>
+    <br>
+    <br>
+    <h2>Category of Skills</h2>
+    <head>
+        <title>ChartJS - Pie Chart</title>
+        <script src="~/js/jquery-1.10.2.min.js"></script>
+        <script src="~/js/Chart.js"></script>
+    </head>
+    <body>
+    <canvas id="mycanvas" width="256" height="256">
+        <script>
+            $(document).ready(function(){
+                var ctx = $("#mycanvas").get(0).getContext("2d");
+
+                //pie chart data
+                //sum of values = 360
+                var data = [
+                    {
+                        value: x,
+                        color: "cornflowerblue",
+                        highlight: "lightskyblue",
+                        label: "Desktop"
+                    },
+                     {
+                         value: y,
+                         color: "orange",
+                         highlight: "darkorange",
+                         label: "Web"
+                     },
+                    {
+                        value: z,
+                        color: "lightgreen",
+                        highlight: "yellowgreen",
+                        label: "Mobile"
+                    },
+
+                ];
+
+                //draw
+                var piechart = new Chart(ctx).Pie(data);
+            });
+        </script></canvas>
+
+    </body>
+   
+</center>
+ 

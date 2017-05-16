@@ -1,0 +1,77 @@
+@model WebApplication.Models.Offer
+
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Are you sure you want to Activate this?</h3>
+<div>
+    <h4>Offer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        @Html.HiddenFor(model => model.id)
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateStart)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateStart)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.seen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.seen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+    </dl>
+
+    <form asp-action="Activer">
+        <div class="form-actions no-color">
+            <input type="submit" value="Activer" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
